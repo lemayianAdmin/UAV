@@ -359,7 +359,7 @@ export default {
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
       texture.repeat.set(1, 1); // Increase texture repeat for more detail
-      texture.encoding = THREE.sRGBEncoding;
+    
 
       heightMap.onLoad = () => {
         const canvas = document.createElement('canvas');

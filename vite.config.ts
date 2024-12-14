@@ -13,6 +13,9 @@ export default defineConfig({
     }),
     vueDevTools(),
   ],
+  build: {
+    sourcemap: true, // Enable sourcemap generation
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
