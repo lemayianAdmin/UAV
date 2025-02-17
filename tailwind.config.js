@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}" // Include Vue files in the purge
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        rajdhani: ['Rajdhani'],
+      }
+    },
   },
   plugins: [],
 }
