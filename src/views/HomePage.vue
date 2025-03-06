@@ -64,9 +64,10 @@
                             Backed by
                         </div>
 
-                        <a href="https://merge.club/"  target="_blank" rel="noopener noreferrer">
+                        <a href="https://merge.club/"
+                            target="_blank" rel="noopener noreferrer">
                             <button class="group flex items-center gap-1 p-1 rounded">
-                                <img class="h-8 w-8" src="/merge.club.webp">
+                                <img class="h-8 w-8" src="https://mwalimuproductionstorage.blob.core.windows.net/uav/merge.club.webp">
                                 <div class="text-white group-hover:underline">Merge Club</div>
                             </button>
                         </a>
