@@ -6,7 +6,7 @@
                 <template v-slot:opposite>
                     <div>
                         <div class="text-xl font-semibold">11/02/25</div>
-                        <p class="font-semibold text-lg">In the beginning</p>
+                        <p class="font-semibold text-lg">In the beginning...</p>
                         <p>
                             I began construction with the airframe which is based on the <a
                                 href="https://www.flitetest.com/articles/ft-spear-build" class="underline"
@@ -103,7 +103,7 @@
                         <p class="font-semibold text-lg">Raspberry and camera</p>
                         <p>
                             I spent the day setting up a Raspberry Pi 4. I chose one with 4GB RAM which is sufficient for the software 
-                            stack that will running in the drone. Also set up a camera for the Pi.
+                            stack that will be running in the drone. Also set up a camera for the Pi.
                         </p>
                     </div>
                 </template>
@@ -120,10 +120,10 @@
                         <p class="font-semibold text-lg">Core Avionics</p>
                         <p>
                             The idea is to control the drone from my laptop. When I was planning this part out, I considered
-                            using radio telemetry but ultimately chose to link to the drone via the intenet. The Raspberry Pi 4
-                            is connected to the internet via a 4G modem with a local simcard. The Pi runs a python Flask webserver which 
-                            is exposed to the intenet via the tunneler ngrok. This allows for two communication with the Pi from any device
-                            with a browser and this is very convinient as a web developer, lowers the build cost and increases the communication range.
+                            using radio telemetry but ultimately chose to link to the drone via the internet. The Raspberry Pi 4
+                            is connected to the internet via a 4G modem with a local SIM card. The Pi runs a python Flask webserver which 
+                            is exposed to the internet via the tunneler ngrok. This allows for two communication with the Pi from any device
+                            with a browser and this is very convenient as a web developer, lowers the build cost and increases the communication range.
                         </p>
                     </div>
                 </template>
@@ -159,7 +159,7 @@
                         <p>
                             Most of the core software is now complete. I can stream full HD video from the camera. Flight telemetry like drone orientation,
                             speed and altitude can be transmitted over the internet. I also added flight navigation basics, 3D terrain maps and flight planning.
-                            This will allow for mission waypoints to be set for the autopilot. Also added flight mode selectors for both autonomuous and manual flight.
+                            This will allow for mission waypoints to be set for the autopilot. Also added flight mode selectors for both autonomous and manual flight.
                             Next I'll be adding the flight control surfaces and propulsion.
                         </p>
                     </div>
@@ -167,6 +167,61 @@
 
                 <div class="mt-20">
                     <video controls="true" src="https://mwalimuproductionstorage.blob.core.windows.net/uav/drone_ui.webm" class="rounded ring-1 ring-white"></video>
+                </div>
+            </v-timeline-item>
+
+            <v-timeline-item>
+                <template v-slot:opposite>
+                    <div>
+                        <div class="text-xl font-semibold">11/03/25</div>
+                        <p class="font-semibold text-lg">Power</p>
+                        <p>
+                            The drone is powered by a 11.1V 3S Lipo battery. The power management system goes like this:
+                            Pixhawk is powered by a 5V 2.3A BEC connected to the battery. The BEC is in series with a 30A motor speed controller which comes 
+                            with its own 5V 2A BEC which powers the servo rail for the elevons. A 5V 3A UBEC powers the Raspberry Pi. This setup 
+                            provides three separate power source redundancies for the flight controller and necessary system separation so that the components
+                            don't fry each other.
+                        </p>
+                    </div>
+                </template>
+
+                <div class="mt-20">
+                    <img src="https://mwalimuproductionstorage.blob.core.windows.net/uav/flight_control.webp" class="rounded ring-1 ring-white">
+                </div>
+            </v-timeline-item>
+
+            <v-timeline-item>
+                <template v-slot:opposite>
+                    <div>
+                        <div class="text-xl font-semibold">25/03/25</div>
+                        <p class="font-semibold text-lg">3D printing</p>
+                        <p>
+                            Back to the airframe. I opted to 3D print some of the parts instead of making them out of plywood for a more cleaner look. I did this 
+                            for the motor mount and the control horns on the elevons. I went with black plastic to contrast the white airframe. Looks like a UFO.
+                        </p>
+                    </div>
+                </template>
+
+                <div class="mt-20">
+                    <img src="https://mwalimuproductionstorage.blob.core.windows.net/uav/3d_parts.webp" class="rounded ring-1 ring-white">
+                </div>
+            </v-timeline-item>
+
+            <v-timeline-item>
+                <template v-slot:opposite>
+                    <div>
+                        <div class="text-xl font-semibold">30/03/25</div>
+                        <p class="font-semibold text-lg">I really like software</p>
+                        <p>
+                            Spent the day vibe coding the frontend. Cleaned it up a bit by adding tabs and added more necessary ui
+                            to display flight data. Also added an AI tab which will be used to configure the AI features of the drone like 
+                            object recognition.
+                        </p>
+                    </div>
+                </template>
+
+                <div class="mt-20">
+                    <img src="https://mwalimuproductionstorage.blob.core.windows.net/uav/software_2.0.webp" class="rounded ring-1 ring-white">
                 </div>
             </v-timeline-item>
 
