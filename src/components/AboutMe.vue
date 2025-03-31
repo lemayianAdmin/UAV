@@ -1,29 +1,28 @@
 <template>
     <div class="flex flex-col items-start px-2 text-white text-start overflow-auto pb-20">
-        <p class="text-xl font-semibold text-white">Project abstract</p>
+        <p class="text-lg font-semibold text-white">Project abstract</p>
         <p class="">
             Kenya has a large and widespread power distribution network connecting almost all corners of the country to
             the national grid. This vastness has brought various challenges in maintenance of this network. Issues
             include irregular maintenance due to the labour required, complicated logistics due to terrain and economic
-            losses resulting from delay in diagnosing problems. These are challenges that I have encountered first-hand
-            during my time working on Africa’s power-grids at Kenya Power and Indra.
+            losses resulting from delay in diagnosing problems.
         </p>
 
-        <p>
+        <p class="mt-2">
             This project aims to develop a low-cost autonomous drone to assist with power line inspections. The
             camera-enabled drone will fly autonomously along pre-set flight routes over the power line, using AI object
             detection to visually detect anomalies. Issues such as missing or collapsed cables will be identified,
             classified and marked for operators to further analyse.
         </p>
 
-        <p>
+        <p class="mt-2">
             By enabling rapid detection of issues in the power grid, this system could tackle issues such as cost and
             labour reductions, reduce repair delays and prolonged outages. This proactive approach would also be
             efficient and reduce the need for current usage of specialized gas vehicles and helicopters, directly
             supporting Kenya Sustainable Development Goals.
         </p>
 
-        <p class="mt-4 text-xl font-semibold text-white">Author</p>
+        <p class="mt-4 text-lg font-semibold text-white">Author</p>
         
         <img class="h-16 w-16 rounded ring-1 ring-black"
             src="https://mwalimuproductionstorage.blob.core.windows.net/uav/profile_pic.webp" />
@@ -33,7 +32,7 @@
             engineering. This website documents my senior year project.
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 mt-2">
             <button @click="openX"
                 class="group flex justify-center items-center h-8 w-8 bg-black ring-1 ring-white hover:ring-blue-500 rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"

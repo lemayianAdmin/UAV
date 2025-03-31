@@ -130,7 +130,7 @@
 
         <div v-if="activeComponent === 'progress'" id="progress-container"
             class="absolute flex justify-center w-full h-full">
-            <div class="flex flex-col p-4 pt-8 w-full lg:w-1/2">
+            <div class="flex flex-col p-4 pt-8 w-full md:w-full lg:w-1/2">
                 <div class="flex items-center gap-4">
                     <button @click="activeComponent = 'hero'"
                         class="group flex justify-center items-center bg-black h-8 w-8 rounded ring-1 ring-white">
@@ -142,11 +142,11 @@
                         </svg>
                     </button>
 
-                    <div class="text-2xl font-semibold text-white">Progress timeline</div>
+                    <div class="text-2xl font-semibold text-white">Progress</div>
                 </div>
 
 
-                <p class="mt-2 text-white">This is a mini-blog for the build process.</p>
+                <p class="mt-2 text-white">This is a timeline for the build process.</p>
 
                 <Progress class=""></Progress>
             </div>

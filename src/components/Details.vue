@@ -67,7 +67,7 @@
                     <template v-slot:activator="{ props: activatorProps }">
 
                         <button v-bind="activatorProps"
-                            class="flex flex-col w-28 hover:bg-black ring-1 ring-white p-2 rounded items-center">
+                            class="flex flex-col  w-28 hover:bg-black ring-1 ring-white p-2 rounded items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill-white" viewBox="0 0 16 16">
                                 <path
                                     d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z" />
@@ -166,7 +166,7 @@
 
                 <div class="w-0.5 h-10 bg-white"></div>
 
-                <v-dialog max-width="500">
+                <v-dialog>
                     <template v-slot:activator="{ props: activatorProps }">
                         <button v-bind="activatorProps"
                             class="flex flex-col min-w-28 hover:bg-black ring-1 ring-white p-2 rounded items-center">
@@ -184,8 +184,8 @@
 
                     <template v-slot:default="{ isActive }">
 
-                        <div class="flex h-full justify-center">
-                            <div class="group flex flex-col p-2 rounded w-[1/3] backdrop-blur ring-1 ring-white">
+                        <div class="flex justify-center items-center w-[100%] lg:w-[50%] mx-auto">
+                            <div class="group flex flex-col p-2 rounded-sm w-[1/3] backdrop-blur ring-1 ring-white">
                                 <button
                                     class="flex items-center justify-center bg-black h-8 w-8 ring-1 ring-white rounded"
                                     @click="isActive.value = false">
@@ -223,7 +223,7 @@
                                     d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z" />
                             </svg>
                             <div class="font-semibold text-lg">4G</div>
-                            Internet connectivity
+                            Internet enabled
                         </button>
                     </template>
 
