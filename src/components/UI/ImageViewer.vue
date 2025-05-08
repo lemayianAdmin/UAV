@@ -15,7 +15,7 @@
                         </button>
                     </div>
 
-                    <img :src="src" class="rounded-sm" />
+                    <img loading="lazy" :src="src" class="rounded-sm" />
                 </div>
             </template>
         </v-dialog>
