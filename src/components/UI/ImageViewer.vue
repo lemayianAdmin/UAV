@@ -1,6 +1,6 @@
 <template>
     <div class="flex">
-        <img :src="src" @click="dialog = true" class="w-full lg:w-1/2 rounded-sm" />
+        <img :src="src" @click="dialog = true" class="w-full h-full" />
 
         <v-dialog v-model="dialog">
             <template v-slot:default="{ isActive }">

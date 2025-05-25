@@ -1,6 +1,6 @@
 <template>
     <div class="w-screen h-screen flex relative font-rajdhani">
-        <div ref="threeContainer" class="w-full h-full brightness-75">
+        <div ref="threeContainer" class="w-full h-full brightness-75 grayscale">
         </div>
 
         <div v-if="!showHero" class="absolute bottom-[50%] flex w-full justify-center">
@@ -32,14 +32,7 @@
                         autonomous power grid inspections.
                     </div>
 
-
                     <div class="flex items-center mt-4">
-                        <button @click="activeComponent = 'progress'" class="text-white hover:underline">
-                            Progress
-                        </button>
-
-                        <div class="w-[1px] h-full bg-white mx-4"></div>
-
                         <button @click="activeComponent = 'details'"
                             class="group flex items-center gap-1 bg-black text-white px-4 py-1 rounded font-semibold ring-1 ring-white">
                             Project Details
@@ -49,26 +42,19 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                             </svg>
-
-                        </button>
-
-                        <div class="w-[1px] h-full bg-white mx-4"></div>
-
-                        <button @click="activeComponent = 'aboutme'" class=" text-white hover:underline">
-                            About
                         </button>
                     </div>
 
-                    <div class="flex items-center gap-1 mt-8">
-                        <div class="text-white font-semibold">
+                    <div class="flex items-center mt-4">
+                        <div class="text-white text-sm">
                             Backed by
                         </div>
 
-                        <a href="https://merge.club/"
-                            target="_blank" rel="noopener noreferrer">
+                        <a href="https://merge.club/" target="_blank" rel="noopener noreferrer">
                             <button class="group flex items-center gap-1 p-1 rounded">
-                                <img class="h-8 w-8" src="https://mwalimuproductionstorage.blob.core.windows.net/uav/merge.club.webp">
-                                <div class="text-white group-hover:underline">Merge Club</div>
+                                <img class="h-6 w-6"
+                                    src="https://mwalimuproductionstorage.blob.core.windows.net/uav/merge.club.webp">
+                                <div class="text-white text-sm group-hover:underline font-semibold">Merge Club</div>
                             </button>
                         </a>
                     </div>
@@ -81,7 +67,7 @@
         <Transition name="details">
             <div v-if="activeComponent === 'details'" id="details-container"
                 class="absolute flex justify-center w-full h-full">
-                <div class="flex flex-col p-4 pt-8 w-full lg:w-1/2">
+                <div class="flex flex-col p-4 pt-8 w-full lg:w-1/2 backdrop-blur-sm">
                     <div class="flex items-center gap-4">
                         <button @click="activeComponent = 'hero'"
                             class="group flex justify-center items-center bg-black h-8 w-8 rounded ring-1 ring-white">
@@ -92,66 +78,13 @@
                                     d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                             </svg>
                         </button>
-
-                        <div class="text-2xl font-semibold text-white">Drone details</div>
                     </div>
 
-                    <div class="my-2 text-white">
-                        Click on a stat to see more details.
-                    </div>
-
-
-                    <Details></Details>
+                    <Details class="mt-2"></Details>
 
                 </div>
             </div>
         </Transition>
-
-        <div v-if="activeComponent === 'aboutme'" id="about-container"
-            class="absolute flex justify-center w-full h-full">
-            <div class="flex flex-col p-4 pt-8 w-full lg:w-1/2">
-                <div class="flex items-center gap-4">
-                    <button @click="activeComponent = 'hero'"
-                        class="group flex justify-center items-center bg-black h-8 w-8 rounded ring-1 ring-white">
-                        <svg class="h-3 w-3 stroke-white group-hover:scale-125 duration-200 transition-transform"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="3.5"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                    </button>
-
-                    <div class="text-2xl font-semibold text-white">About</div>
-                </div>
-
-                <AboutMe class="mt-2" v-if="activeComponent = 'aboutme'"></AboutMe>
-            </div>
-        </div>
-
-        <div v-if="activeComponent === 'progress'" id="progress-container"
-            class="absolute flex justify-center w-full h-full">
-            <div class="flex flex-col p-4 pt-8 w-full md:w-full lg:w-1/2">
-                <div class="flex items-center gap-4">
-                    <button @click="activeComponent = 'hero'"
-                        class="group flex justify-center items-center bg-black h-8 w-8 rounded ring-1 ring-white">
-                        <svg class="h-3 w-3 stroke-white group-hover:scale-125 duration-200 transition-transform"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="3.5"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                    </button>
-
-                    <div class="text-2xl font-semibold text-white">Progress</div>
-                </div>
-
-
-                <p class="mt-2 text-white">This is a timeline for the build process.</p>
-
-                <Progress class=""></Progress>
-            </div>
-        </div>
-
 
     </div>
 </template>
@@ -162,9 +95,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import gsap from 'gsap';
 import Typewriter from '@/components/Typewriter.vue';
-import AboutMe from '@/components/AboutMe.vue';
 import Details from '@/components/Details.vue';
-import Progress from '@/components/Progress.vue';
 
 
 export default {
@@ -172,9 +103,7 @@ export default {
 
     components: {
         Typewriter,
-        AboutMe,
         Details,
-        Progress,
     },
 
     data() {
@@ -195,17 +124,10 @@ export default {
     watch: {
         activeComponent(newValue) {
             if (newValue === 'details') {
-
-                this.moveCameraTo({ x: -0.8, y: -1.2, z: -1.6 })
+                this.moveCameraTo({ x: 1.8, y: 1.7, z: 1.2 })
 
             } else if (newValue === 'hero') {
                 this.moveCameraTo({ x: -0.8, y: 0.7, z: -1.6 })
-
-            } else if (newValue === 'aboutme') {
-                this.moveCameraTo({ x: 0.8, y: 1.7, z: -0.6 })
-
-            } else if (newValue === 'progress') {
-                this.moveCameraTo({ x: 1.8, y: 1.7, z: 1.2 })
             }
         }
     },

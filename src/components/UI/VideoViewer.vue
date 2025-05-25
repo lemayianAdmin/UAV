@@ -1,6 +1,6 @@
 <template>
     <div class="flex">
-        <video :src="src" controls @click="dialog = true" class="w-full lg:w-1/2 rounded-sm"></video>
+        <video :src="src" controls @click="dialog = true" class="w-full h-full rounded-sm"></video>
 
         <v-dialog v-model="dialog">
             <template v-slot:default="{ isActive }">
